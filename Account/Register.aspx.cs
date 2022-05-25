@@ -21,4 +21,13 @@ public partial class Account_Register : Page
             ErrorMessage.Text = result.Errors.FirstOrDefault();
         }
     }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Request.IsAuthenticated)
+        {
+            Response.Redirect("~/", true);
+        }
+
+    }
 }

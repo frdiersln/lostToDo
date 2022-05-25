@@ -9,12 +9,19 @@ public partial class Account_Login : Page
 {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Request.IsAuthenticated)
+            {
+                Response.Redirect("~/", true);
+            }
+
             RegisterHyperLink.NavigateUrl = "Register";
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
                 RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
             }
+
         }
 
         protected void LogIn(object sender, EventArgs e)
