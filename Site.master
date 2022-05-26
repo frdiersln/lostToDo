@@ -98,6 +98,10 @@ html, body{
     border-radius: 7px;
 }
 
+.navbar .container{
+    width: 94%;
+}
+
 .navbar a{
     color: #dbcccc;
 }

@@ -3,6 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="cards">
+        
+        <%= CharCard %>
 
         <div class="card"  runat="server" id="PlusCard">
             <div class="card-content">

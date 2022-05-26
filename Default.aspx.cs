@@ -7,8 +7,25 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : Page
 {
+
+    public class CharCardVM
+    {
+        public bool CanViewRoles { get; set; }
+        public bool CanViewUsers { get; set; }
+        public bool CanViewUserGroups { get; set; }
+    }
+
+    public string CharCard 
+    {
+        get;
+        set;
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        CharCardVM oVM = new CharCardVM();
+        CharCard = TemplateHelper.RenderPartialToString("~/DynamicData/_charCard.ascx", oVM);
+
         this.PlusCard.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(this.PlusCard, string.Empty));
         if (IsPostBack && Request["__EVENTTARGET"] == PlusCard.UniqueID)
         {
