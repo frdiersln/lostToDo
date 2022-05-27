@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="CreateChar.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
-
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
@@ -19,7 +18,5 @@
     <div class="form-group">
             <asp:Button runat="server" OnClick="CreateChar" Text="Create Character" CssClass="btn btn-default" />
     </div>
-
-    <asp:Label Text="text" runat="server" ID="label" />
 </asp:Content>
 

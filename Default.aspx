@@ -4,7 +4,7 @@
 
     <div class="cards">
         
-        <%= CharCard %>
+        <%= CharCards %>
 
         <div class="card"  runat="server" id="PlusCard">
             <div class="card-content">
@@ -31,10 +31,15 @@
 }
 
 .card .card-content {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;     
+    z-index: 1;
 }
 
 .card .card-bg {
@@ -45,15 +50,9 @@
     right: 0;
     border-radius: 20px;
     overflow: hidden;
-    z-index: 0;
-}
-.card .bg-img {
-    height: 100%;
-    object-fit: cover;
-    vertical-align: middle;
 }
 
-.card img {
+.card .card-bg img {
     width: 100%;
     height: auto;
     border-radius: 14px;

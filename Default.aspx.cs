@@ -15,7 +15,7 @@ public partial class _Default : Page
         public bool CanViewUserGroups { get; set; }
     }
 
-    public string CharCard 
+    public string CharCards
     {
         get;
         set;
@@ -23,14 +23,16 @@ public partial class _Default : Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        _charCards.Page_Load(sender, e);
+        
         CharCardVM oVM = new CharCardVM();
-        CharCard = TemplateHelper.RenderPartialToString("~/DynamicData/_charCard.ascx", oVM);
+        CharCards = TemplateHelper.RenderPartialToString("~/_charCards.ascx", oVM);
 
         this.PlusCard.Attributes.Add("onclick", Page.ClientScript.GetPostBackEventReference(this.PlusCard, string.Empty));
         if (IsPostBack && Request["__EVENTTARGET"] == PlusCard.UniqueID)
         {
             PlusCard_Click(PlusCard, EventArgs.Empty);
-        }
+        }        
     }
 
     protected void PlusCard_Click(object sender, EventArgs e)

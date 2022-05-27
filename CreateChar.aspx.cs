@@ -4,7 +4,6 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IdentityModel.Claims;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,17 +21,9 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void CreateChar(object sender, EventArgs e)
     {
-        string currentUserId = "";
+        string currentUserId = CurrentUserId.UserId(User.Identity.Name);
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         SqlConnection con = new SqlConnection(connectionString);
-        con.Open();
-        SqlCommand com1 = new SqlCommand(String.Format("select Id from AspNetUsers where UserName='{0}'", User.Identity.Name), con);
-        SqlDataReader dr = com1.ExecuteReader();
-        if (dr.Read())
-        {
-            currentUserId = dr[0].ToString();
-        }
-        con.Close();
         con.Open();
         SqlCommand com2 = new SqlCommand("insert into chars (ownerId, nick, class) values (@OwnerId, @Nick, @Class)", con);
         com2.Parameters.AddWithValue("@OwnerId", currentUserId);
