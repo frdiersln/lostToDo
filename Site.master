@@ -90,7 +90,7 @@ html, body{
 
 .navbar{
     margin: auto;
-    width: 64%;
+    width: 69%;
     min-width: 310px;
     background-color: #242433;
     border-radius: 7px;
@@ -130,14 +130,13 @@ html, body{
 }
 
 .body-content{
-    width: 64%;
-    padding: 66px 1.4%;
+    width: 66%;
+    min-height: 80vh;
+    padding: 66px 0;
 }
 
 footer{
-    margin:auto 18.6% 0 18.6%;
-    position: fixed;
-    padding: 10px 10px 0px 10px;
+    margin:auto 17% 0 17%;
     bottom: 0;
 }
 </style>

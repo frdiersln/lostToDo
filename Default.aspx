@@ -38,8 +38,12 @@
     width: 100%;
     left: 0;
     top: 0;
+    padding-top: 150%;
     position: absolute;     
     z-index: 1;
+    font-size: 22px;
+    font-weight: 200;
+    letter-spacing: 0.66em; 
 }
 
 .card .card-bg {
@@ -56,6 +60,12 @@
     width: 100%;
     height: auto;
     border-radius: 14px;
+    -webkit-filter: blur(2.6px); /* Safari 6.0 - 9.0 */
+    filter: blur(2.6px);
+}
+
+.card:hover {
+    border: 2px solid transparent; /*onhover slightly shrink effect*/
 }
 </style>
 

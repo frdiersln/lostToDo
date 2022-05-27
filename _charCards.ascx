@@ -4,11 +4,11 @@
 
 <% foreach (Character chr in Characters){ %>
     <div class="card">
-        <a href="#"><span class="clickable"></span></a> <!-- href for to-do page -->
+        <a href="To-Do?id=<%: chr.Id %>"><span class="clickable"></span></a> <!-- href for to-do page -->
         <div class="card-content">
             <%: chr.Nick %>
         </div>
-        <div class="card-bg"><img src="imgs/sorceress.jpg" alt="Sorceress" /></div>
+        <div class="card-bg"><img src="imgs/<%: chr.Class %>.jpg" alt="Sorceress" /></div>
     </div>
 <% } %>
 

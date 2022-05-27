@@ -26,6 +26,7 @@ public partial class _charCards : System.Web.DynamicData.FieldTemplateUserContro
 
     public class Character
     {
+        public string Id = "";
         public string Nick = "";
         public string Class = "";
     }
@@ -40,14 +41,15 @@ public partial class _charCards : System.Web.DynamicData.FieldTemplateUserContro
         string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         SqlConnection con = new SqlConnection(connectionString);
         con.Open();
-        SqlCommand com = new SqlCommand(String.Format("select nick, class from chars where ownerId = '{0}'", currentUserId), con);
+        SqlCommand com = new SqlCommand(String.Format("select id, nick, class from chars where ownerId = '{0}'", currentUserId), con);
         SqlDataReader rd = com.ExecuteReader();
         List<Character> Chrts = new List<Character>();
         while (rd.Read())
         {
             Character chr = new Character();
-            chr.Nick = rd[0].ToString();
-            chr.Class = rd[1].ToString();
+            chr.Id = rd[0].ToString();
+            chr.Nick = rd[1].ToString();
+            chr.Class = rd[2].ToString();
             Chrts.Add(chr);
         }
         con.Close();
