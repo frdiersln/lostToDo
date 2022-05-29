@@ -131,8 +131,21 @@ html, body{
 
 .body-content{
     width: 66%;
-    min-height: 80vh;
+    min-height: 80vh; /*FOR FOOTER POSITION*/
     padding: 66px 0;
+}
+
+[type='text'], [type='password'], [type='submit'], select{
+    color: white;
+    background-color: #1d1d2b;
+    border: none;
+    padding: 7px 4px;
+    border: 1px solid white;
+    border-radius: 7px;
+
+    min-width: 141px;
+    width: 8vw;
+
 }
 
 footer{
