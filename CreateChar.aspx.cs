@@ -28,7 +28,7 @@ public partial class Default2 : System.Web.UI.Page
         SqlCommand com2 = new SqlCommand("insert into chars (ownerId, nick, class) values (@OwnerId, @Nick, @Class)", con);
         com2.Parameters.AddWithValue("@OwnerId", currentUserId);
         com2.Parameters.AddWithValue("@Nick", Nick.Text);
-        com2.Parameters.AddWithValue("@Class", Class.Text);
+        com2.Parameters.AddWithValue("@Class", Class.SelectedValue);
         com2.ExecuteNonQuery();
         con.Close();
         Response.Redirect("~/", true);
